@@ -1,0 +1,172 @@
+@import '../_variables';
+@import '../_mixins';
+
+
+.login__Between{
+  display: flex;
+  justify-content: space-between;
+}
+.login__Between .ivu-btn:hover{
+  color: #fff;
+  background: none;
+  border: none;
+}
+.login__wrapper {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.login__container {
+  position: relative;
+  margin: 40px auto;
+  width: 100%;
+  height: 525px;
+  margin-top: 13vh;
+  @include isDevice("mobile") {
+    height: 100%;
+    min-height: 450px;
+    max-height: 520px;
+    margin-top: 20px;
+  }
+}
+
+.login__left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transition: .25s ease;
+  overflow: hidden;
+  left: 0;
+  height: 100%;
+}
+.login__left img{
+  width: 255%;
+  min-width: 1400px;
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  z-index:1000;
+}
+.login__left:hover {
+  width: 60%;
+}
+
+.login__left img:hover {
+  width: 210%;
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  z-index: 1000;
+}
+
+.login__right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transition: .25s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(251,227,216,.5);
+  background-position: right;
+  right: 0;
+  z-index: 1;
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.login__right__image {
+  height: 200px;
+  width: 100%;
+}
+
+.login__right:before {
+  font-weight: bold;
+  position: absolute;
+  background: white;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  top: 150px;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.login__right:after {
+  content: " ";
+  height: 280px;
+  width: 1px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+}
+
+.login__right:after {
+  right: 0;
+}
+
+.login__left:hover + .login__right {
+  width: 40%;
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.login__right:hover {
+  width: 60%;
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.login__right:hover + .login__right {
+  width: 40%;
+}
+
+.login__form {
+  width: 250px;
+  margin: auto;
+}
+
+.login__background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/client/images/login_bg.jpg');
+    -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(5px);
+    background-size: 100%;
+}
+
+.login__button {
+  color: #fff;
+  background-color: #b1784b;
+  border-color: #b1784b;
+}
+
+.login__button:hover {
+  text-decoration: none;
+  background: #2d8cf0;
+  border: none;
+}
+
+.login__button-secondary {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  marin: 20px 20px
+}
+

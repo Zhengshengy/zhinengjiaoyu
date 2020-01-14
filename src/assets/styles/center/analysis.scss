@@ -1,0 +1,14 @@
+@import '../_variables';
+@import '../_mixins';
+
+.center-analysis {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 36px;
+  @include isDevice('!mobile') {
+    max-width: calc(100vw - 300px);
+    .ivu-table-wrapper {
+      width: 100%;
+    }
+  }
+}

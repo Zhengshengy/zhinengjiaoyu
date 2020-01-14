@@ -1,0 +1,34 @@
+@import '../_variables';
+@import '../_mixins';
+
+.bn-topic-con{
+  @include isDevice('mobile'){
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+.topic-item, .topic-sub-item {
+  width: 98%;
+  p{
+    margin-bottom: 15px;
+  }
+  span {
+    float: right;
+  }
+}
+.center-topic-box {
+  @include isDevice('mobile'){
+    width: 320px;
+  }
+  border: none!important;
+  background-color: transparent;
+  div.ivu-collapse-item {
+    border: transparent;
+    div.ivu-collapse-header {
+      border-bottom: 1px solid transparent!important;
+    }
+  }
+}
+.topic-sub-item {
+  margin-left: 2em;
+}

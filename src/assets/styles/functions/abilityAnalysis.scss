@@ -1,0 +1,59 @@
+@import '../_variables';
+@import '../_mixins';
+.v3-abilityAnalysis{
+  width: 84%;
+  margin: auto;
+  margin-bottom: 3%;
+  .v3-abilityAnalysis-title{
+    @include displayFlex(flex,center,center);
+    text-align: center;
+    font-size: $bn-font-large;
+    margin-top: 3%;
+    @include isDevice('mobile'){
+      font-size: $bn-font-regular;
+    }
+    .v3-abilityAnalysis-line{
+      width: 30%;
+      height: 1px;
+      background: #cccccc;
+      margin: auto 3%;
+      @include isDevice('mobile'){
+        width: 20%;
+      }
+    }
+    h2{
+      width: auto;
+      font-size: $bn-font-large;
+      @include isDevice('mobile'){
+        font-size: $bn-font-regular;
+      }
+    }
+  }
+  p{
+    width: 60%;
+    margin:2% auto;
+    font-size: $bn-font-medium;
+    text-align: center;
+    color:$bn-font-color-nine;
+    @include isDevice('mobile'){
+      font-size: $bn-font-small;
+      width: 90%;
+    }
+  }
+  .abilityAnalysis-imgUrl{
+    width:68%;
+    margin:auto;
+    @include box-shadows(0 0px 9px #474747);
+    @include isDevice('mobile'){
+      width: 100%;
+      margin: auto;
+      margin-top: 10%;
+    }
+    img{
+      width: 97%;
+      display: block;
+      margin: auto;
+    }
+  }
+
+}

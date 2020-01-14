@@ -1,0 +1,61 @@
+@import '../_variables';
+@import '../_mixins';
+.v3-students{
+  background: #efefef;
+  @include equal-width-height(100%,100%,scroll);
+  .v3-students-bannerImg{
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+.v3-students-topImg{
+  @include width_align(96%,auto);
+  @include equal-width-height(96%,73vh,hidden);
+  @include displayFlex(flex,flex-start,flex-start);
+  margin-top: 1%;
+  @include isDevice('mobile')
+    {
+    @include equal-width-height(96%,auto,scroll);
+      @include displayFlex(flex,flex-start,flex-start);
+      flex-direction: column;
+    }
+  @include isDevice('!mobile')
+    {
+
+    }
+  }
+  .topImg-left-img{
+    margin-bottom: 1%;
+    width: 35%;
+    background: #fff;
+    height: 79.2vh;
+    @include isDevice('mobile')
+    {
+      width: 100%;
+      height:auto;
+    }
+    img{
+      width: 100%;
+      border-top: solid 10px #efefef;
+    }
+  }
+  .topImg-right-video{
+    @include equal-width-height(64%,79.2vh,hidden);
+    margin-left: 1%;
+    background: #fff;
+    @include isDevice('mobile')
+    {
+      @include equal-width-height(100%,auto,hidden);
+      margin-left: 0;
+    }
+    video{
+      width: 100%;
+    }
+  }
+
+
+.w100{
+  width: $bn-w100;
+}
+

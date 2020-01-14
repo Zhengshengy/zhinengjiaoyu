@@ -1,0 +1,302 @@
+// 题目展示学习相关CSS
+
+.exam-main {
+    // padding-left: 50px;
+    // padding-right: 50px;
+    //min-height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: $bn-theme-color;
+    @include isDevice('!mobile'){
+        min-height: 90vh;
+    }
+}
+
+.exam-main-select{
+    background-color: #fff;
+    max-width: 800px;
+    width: 50%;
+    margin: 0 auto;
+    @include isDevice('mini_mobile'){
+        width: 100%;
+    }
+}
+
+.exam-main-container{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex: 1;
+    //width: 1400px;
+    margin: 0 25px;
+    background-color: $bn-theme-color;
+    padding-bottom: 20px;
+    flex-direction: row;
+    @include isDevice('mobile'){
+        flex-direction: column;
+        //margin: 0 35px 0 15px;
+    }
+}
+.exam-main-left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 20px;
+    @include isDevice('!mobile'){
+        margin-right: 25px;
+    }
+    @include isDevice('mobile'){
+        //min-height: 100vw;
+        flex: 0;
+        -webkit-box-flex: 0;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        line-height: 50px;
+        padding:  0 20px;
+        background-color: #fff;
+        color: $bn-theme-color;
+        button{
+            margin-left: 20px;
+        }
+        @include isDevice('mobile'){
+            height: 80px;
+            line-height: 80px;
+        }
+    }
+}
+.exercise-type{
+    margin-top: 10px;
+    padding: 0 20px;
+    background: #fff;
+    line-height: 30px;
+}
+.exercise-content {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    background: #fff;
+    // width: calc(100% - 4px);
+    margin:  0 auto;
+}
+.exercise-title {
+    margin: 8px;
+}
+
+.analyze__tip {
+    @include isDevice('mobile') {
+        margin-right: 10px;
+        font-size: 12px;
+        line-height: 1.3;
+        padding: 6px 0;
+        width: 80vw;
+    }
+}
+
+.analyze__action {
+    @include isDevice('mobile') {
+        //min-width: 100px;
+    }
+}
+
+.frame-view-tip {
+    position: relative;
+    text-align: center;
+    bottom: 20px;
+    color: yellow;
+    background-color: black;
+}
+
+.frame-view-tip2 {
+    //display: none;
+    @include isDevice('!mobile') {
+        padding-right: 20px;
+    }
+    position: absolute;
+    text-align: center;
+    right: 0px;
+    top: 0px;
+    //min-height: 100%;
+    //min-width: 100%;
+    color: yellow;
+    //border: solid black 1px;
+    //background-color: black;
+    //filter:alpha(Opacity=20);-moz-opacity:0.2;opacity: 0.2;
+    //background:rgba(0,0,0,0);
+    z-index: 100;
+}
+
+//.exercise-view:hover .frame-view-tip2{
+//    display: block;
+//}
+
+.frame-view-scroll-tip {
+    position: relative;
+    text-align: center;
+    top: -200px;
+    right: -30px;
+    height: 0px;
+    color: yellow;
+    float: right;
+    width: 20px;
+    line-height: 24px;
+    word-wrap: break-word;
+    letter-spacing: 2px;
+}
+
+.exercise-view {
+    width: 100%;
+    height: 100%;
+    //@include isDevice('mobile'){
+    //    height: 80vh;
+    //    max-height: 450px;
+    //}
+}
+// 反馈
+.feedback-box{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    .action-box{
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: right;
+        button{
+            margin-right: 20px;
+        }
+    }
+}
+textarea.ivu-input{
+    padding: 20px;
+    resize: none;
+}
+.answer-input-wrap {
+    flex: 1;
+    color: #495060;
+    min-width: 80px;
+}
+
+.exam-main-right {
+    margin-top: 20px;
+    @include isDevice('!mobile'){
+        min-width: 250px;
+        flex: 0;
+        -webkit-box-flex: 0;
+    }
+    @include isDevice('mobile'){
+        //max-height: 250px;
+        flex: 1;
+        -webkit-box-flex: 1;
+    }
+    //height: 450px;
+    background: #fff;
+    header{
+        padding: 0 20px;
+        box-shadow: 1px 2px 3px #ddd;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: $bn-theme-color;
+    }
+}
+.exam-answer-main{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    @include isDevice('mobile'){
+        flex-direction: row;
+    }
+}
+.exam-answer-input-control {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+.topic-model-wrap {
+    @include isDevice('!mobile'){
+        width: 800px;
+    }
+}
+.topic-model-view {
+    @include isDevice('!mobile'){
+        width: 760px;
+        height: 560px;
+    }
+    @include isDevice('mobile'){
+        width: 100%;
+        height: 80vw;
+    }
+}
+.btn-group {
+    @include isDevice('!mobile'){
+        margin-top: 120px;
+    }
+    @include isDevice('mobile'){
+        margin-right: 12px;
+    }
+    button {
+        &+button{
+            margin-top: 8px;
+        }
+    }
+}
+
+.btn-group-topic {
+    @include isDevice('mobile'){
+        margin-right: 12px;
+    }
+}
+
+.topic-view-item {
+    p{
+        cursor: pointer;
+        &:hover{
+            color: $bn-theme-color;
+        }
+    }
+    & + .topic-view-item{
+        margin-top: 20px;
+    }
+}
+
+.answer-state{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    color: #495060;
+    span{
+        width: 50%;
+    }
+    @include isDevice('mobile'){
+        margin-right: 12px;
+    }
+}
+
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #fff;
+    width: 100%;
+    //margin: 8px 8px;
+    //height: 100%;
+}
+.bn-displayflex__column{
+    @include displayFlex(flex,space-between,center);
+    flex-direction: column;
+}
+.bn-displayflex{
+    @include displayFlex(flex,space-between,center);
+}

@@ -1,0 +1,37 @@
+@import '../_variables';
+@import '../_mixins';
+
+.select-form{
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 20px auto;
+  @include isDevice("mobile") {
+    width: 80%;
+    min-width: 250px;
+  }
+}
+.select-title{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  @include isDevice("mobile") {
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  min-width: 150px;
+  color: #5082d1;
+}
+.submit-form-item{
+  text-align: center;
+}
+.select-submit {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  height: 40px;
+}
+.select-submit__button {
+  flex: 1;
+  margin: 0 30px;
+  max-width: 320px;
+}

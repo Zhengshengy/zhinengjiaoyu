@@ -1,0 +1,425 @@
+// 共同代码段 mixin
+
+@mixin font-xlarge{
+  font-size:$bn-font-large;
+  @media (min-width: $bn-mobile-screen){
+    font-size:$bn-font-xlarge;
+  }
+}
+@mixin font-large{
+  font-size:$bn-font-medium;
+  @media (min-width: $bn-mobile-screen){
+    font-size: $bn-font-large;
+  }
+}
+@mixin font-medium{
+  font-size:$bn-font-regular;
+  @media (min-width: $bn-mobile-screen){
+    font-size: $bn-font-medium;
+  }
+}
+@mixin font-regular{
+  font-size:$bn-font-small;
+  @media (min-width: $bn-mobile-screen){
+    font-size: $bn-font-regular;
+  }
+}
+
+
+@mixin app-linebreak-border () {
+  border-bottom: 1px solid $bn-app-border;
+}
+
+@mixin field-border () {
+  border: 1px solid $bn-input-border;
+  border-radius: 2px;
+}
+
+@mixin field-outline () {
+  outline-color: $bn-input-border;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+@mixin bn-button($height:30px,$width:65px,$size:14px){
+  height: $height;
+  width: $width;
+  font-size: $size;
+  display: inline-block;
+  text-align: center;
+  line-height: $height - 2;
+  cursor: pointer;
+  border-radius:2px;
+}
+
+@mixin normal-button($height:30px,$width:65px,$size:14px,$color:$bn-edit-blue) {
+  @include bn-button($height,$width,$size);
+  color: black;
+  border:solid 1px $color;
+  display: inline-block;
+  &:focus {
+    background-color: white;
+    color: black;
+  }
+  &:hover {
+    background-color: #EEE;
+    color: black;
+  }
+}
+
+@mixin edit-button($height:30px,$width:65px,$size:14px,$color:$bn-edit-blue){
+  @include bn-button($height,$width,$size);
+  background-color: white;
+  color: $color;
+  border:solid 1px $color;
+  display: inline-block;
+  &:focus {
+    border:solid 1px $color;
+    background-color: transparent;
+    color: $color;
+  }
+  &:hover {
+    border:solid 1px $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+@mixin btn-fill ($bg-color: $btn-green,$bg-color-hover: $btn-green-hover ) {
+    background-color:$bg-color;
+    border: 1px solid $bg-color;
+    &:hover {
+        background-color: $bg-color-hover;
+        border: 1px solid $bg-color-hover;
+    }
+}
+
+@mixin btn-fill-green() {
+    @include btn-fill($btn-green, $btn-green-hover);
+}
+@mixin btn-fill-gray() {
+  @include btn-fill($btn-gray, $btn-gray-hover);
+}
+@mixin btn-fill-dark() {
+  @include btn-fill($btn-dark, $btn-dark-hover);
+}
+@mixin btn-fill-black() {
+  @include btn-fill(black, #7d7d7d);
+  border:1px solid white;
+}
+@mixin btn-fill-red() {
+  @include btn-fill($btn-red, $btn-red-hover);
+}
+@mixin btn-fill-pink() {
+  @include btn-fill($btn-pink, $btn-pink-hover);
+}
+@mixin btn-fill-blue() {
+  @include btn-fill($btn-blue, $btn-blue-hover);
+}
+
+@mixin bn-button-filled($height:30px,$width:65px,$size:14px,$color:$bn-hightlight-color){
+  @include bn-button($height,$width,$size);
+  background-color: $color;
+  color: white;
+  @if $color == "green" {
+      @include btn-fill-green();
+  }
+  @else if $color == "gray" {
+      @include btn-fill-gray();
+  }
+  @else if $color == "red" {
+      @include btn-fill-red();
+  }
+  @else if $color == "pink" {
+      @include btn-fill-pink();
+  }
+  @else if $color == "dark" {
+      @include btn-fill-dark();
+  }
+  @else if $color == "black" {
+    @include btn-fill-black();
+  }
+  @else if $color == "blue" {
+    @include btn-fill-blue();
+  }
+  @else {
+    &:hover {
+      background-color: darken($color, 10);
+    }
+  }
+  &:hover, &:focus {
+    color: white;
+  }
+}
+
+@mixin bn-button-white($height:30px,$width:65px,$size:14px){
+  @include bn-button($height,$width,$size);
+  border:1px solid #979797;
+  background-color: white;
+  color: #757575;
+  &:hover{
+    background-color: darken(#FFFFFF, 10);
+  }
+}
+
+@mixin pink-notification($radius, $paddingTop, $fontSize) {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background-color: #ee3888;
+  position: relative;
+  border-radius: $radius;
+  font-size: $fontSize;
+  min-width: $radius;
+  min-height: $radius;
+  padding-top: $paddingTop;
+}
+
+@mixin badge($bg-color:$bn-app-yellow,$color:rgba(0,0,0,0.6)){
+  padding: 2px 8px;
+  font-size:10px;
+  color: $color;
+  background-color: $bg-color;
+  border-radius: 2px;
+  font-weight: normal;
+}
+@mixin bn-link($size,$color){
+  font-size:$size;
+  color:$color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+@mixin isDevice($device) {
+
+  @if $device == "ipad" {
+    @media (min-width: $bn-mobile-screen) and (max-width: $bn-pad-screen) {
+        @content;
+    }
+  }
+
+  @else if $device == "mobile" {
+    @media not all and (min-width: $bn-mobile-screen) {
+        @content;
+    }
+  }
+
+  @else if $device == "mini_mobile" {
+    @media not all and (min-width: $bn-mini-mobile-screen) {
+      @content;
+    }
+  }
+
+  @else if $device == "!mobile" {
+    @media (min-width: $bn-mobile-screen) {
+        @content;
+    }
+  }
+
+  @else if $device == "desktop" {
+    @media (min-width: $bn-pad-screen) {
+        @content;
+    }
+  }
+}
+
+// Vendor Prefixes
+
+@mixin animation($animation)
+{
+  -webkit-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+@mixin box-sizing($boxmodel)
+{
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+@mixin rotate($degrees)
+{
+  -webkit-transform: rotate($degrees);
+  -ms-transform: rotate($degrees); // IE9 only
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+@mixin transform($transform)
+{
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+@mixin transition($transition)
+{
+  -webkit-transform: $transition;
+  -moz-transform: $transition;
+  -ms-transform: $transition;
+  transform: $transition;
+}
+@mixin backface($backface){
+  -webkit-backface-visibility: $backface;
+  -moz-backface-visibility:$backface;
+  -ms-backface-visibility:$backface;
+  backface-visibility: $backface;
+}
+
+
+@mixin transitions($opacity,$transforms)
+{
+  -webkit-transition: opacity $opacity, -webkit-transform $transforms;
+  -moz-transition: opacity $opacity, -webkit-transform $transforms;
+  -ms-transition: opacity $opacity, -webkit-transform $transforms;
+  transition: opacity $opacity, -webkit-transform $transforms;
+}
+
+@mixin transform-origin($star,$end){
+  -webkit-transform-origin: $star $end;
+  transform-origin: $star $end;
+  -moz-transform-origin: $star $end;
+}
+
+
+
+@mixin round($width,$height,$border-radius,$background,$right,$top){
+  width: $width;
+  //min-width: 1024px;
+  height: $height;
+  //min-height: 980px;
+  -webkit-border-radius:$border-radius ;
+  -moz-border-radius:$border-radius ;
+  border-radius: $border-radius;
+  background: $background;
+  position: fixed;
+  right: $right;
+  top: $top;
+  @include animation(fadeInRight 2s ease 0s 1 both);
+  @include box-shadows(0 0 24px #000);
+}
+@mixin equal-width-height($width,$height,$overflow){
+  width:$width;
+  height: $height;
+  overflow: $overflow;
+}
+
+
+@mixin box-shadows($box-shadow){
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  -ms-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+
+}
+
+@mixin flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin ivu-input($background,$border,$color){
+  background: $background;
+  border: $border;
+  color: $color;
+}
+
+@mixin keyframes2($pulse){
+  @-webkit-keyframes #{$pulse} {@content}
+  @-ms-keyframes #{$pulse}{@content}
+  @-moz-keyframes #{$pulse}{@content}
+  @keyframes #{$pulse}{@content}
+}
+
+@mixin pulse2{
+  @include keyframes2(pulse){
+    from { -webkit-transform: scale3d(0.5,0.5,1); }
+    to { -webkit-transform: scale3d(1,1,1); }
+  }
+}
+
+@mixin list__for__before{
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background-color: #338bd8;
+  position: absolute;
+  right: -40px;
+  top: 18px;
+  border: solid 6px rgba(93, 210, 253, 0);
+}
+
+@mixin list__for__after{
+  height: 116px;
+  color: $bn-size-color;
+  content: "";
+  position: absolute;
+  right: -35px;
+  top: -30px;
+  border: 1px solid #338bd8;
+}
+
+@mixin list-hover__h1{
+  @include btn-fill($bn-background-gray,$bn-font-medium);
+  opacity: 0;
+  cursor: default;
+}
+
+@mixin title__h1{
+  font-size:$bn-font-regular;
+  font-weight: $bn-weight-normal;
+  cursor: pointer;
+  color: #000;
+  text-align:right;
+}
+
+@mixin classify{
+  display: none;
+  @include backface(hidden);
+  position: absolute;
+  left: 110px;
+  top: -30px;
+  width: 100%;
+  text-align: left;
+  padding-left: 40%;
+}
+
+@mixin keywords($width,$auto,$center,$left){
+  width: $width;
+  margin: 20px auto;
+  text-align: $center;
+  left: $left;
+  font-size: $bn-font-medium;
+  color: $bn-font-color-nine;
+}
+
+@mixin bn-main-nav{
+
+}
+//flex布局
+@mixin displayFlex($flex,$justifyCont,$alignItem){
+  display: $flex;
+  justify-content: $justifyCont;
+  align-items: $alignItem;
+}
+@mixin width_align($width,$magin){
+  width: $width;
+  margin: $magin;
+}

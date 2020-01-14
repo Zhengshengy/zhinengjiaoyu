@@ -1,0 +1,154 @@
+// 对IView默认样式的重写
+
+.ivu-radio-group-button{
+  .ivu-radio-wrapper{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0;
+    width: 75px;
+    text-align: center;
+    margin-top: 8px;
+    &+.ivu-radio-wrapper{
+      margin-left: 20px;
+      @include isDevice("mobile") {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+.ivu-radio-wrapper{
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.ivu-poptip-body{
+  padding: 15px 16px;
+}
+
+.ivu-modal-close{
+  top: 8px;
+}
+
+.ivu-poptip{
+  width: 100%;
+}
+
+.list__for > .ivu-poptip {
+  max-width: 160px;
+}
+
+.ivu-poptip-rel{
+  width: 100%;
+  margin: 8px 0;
+}
+
+.ivu-select > .ivu-select-dropdown{
+  width: 100%;
+}
+
+
+.ivu-cascader-menu{
+  @include isDevice("!mobile") {
+    height: 290px;
+  }
+  .ivu-cascader-menu-item {
+    padding-right: 32px;
+  }
+}
+.ivu-select-dropdown{
+  @include isDevice("!mobile") {
+    max-height: 290px;
+  }
+}
+.not-found .ivu-select-not-found{
+  display: block!important;
+  color: #909398;
+}
+.ivu-select-dropdown-list{
+  display: block;
+}
+
+.ivu-collapse {
+  background-color: transparent;
+  border: transparent;
+  font-size: 14px;
+}
+
+.ivu-collapse-header{
+  .ivu-icon{
+    margin-right: 10px;
+  }
+}
+
+//.topic-fliter-box > .ivu-collapse-item > .ivu-collapse-header {
+//  color: #fff;
+//}
+
+.center-topic-box > .ivu-collapse-item > .ivu-collapse-header {
+  color: #666;
+}
+
+.topic-fliter-box > .ivu-collapse-item > .ivu-collapse-content {
+  background-color: transparent;
+  color: #fff;
+}
+
+.center-topic-box > .ivu-collapse-item > .ivu-collapse-content {
+  background-color: transparent;
+  color: #666;
+}
+
+.ivu-collapse > .ivu-collapse-item {
+  border-top: 1px solid transparent;
+}
+
+.ivu-collapse-content-box {
+  margin-left: 50px;
+  line-height: 2;
+  li {
+    cursor: pointer;
+  }
+}
+//.ivu-icon-ios-arrow-down:before{
+//  display: none;
+//}
+.ivu-menu-light{
+  background: none;
+}
+.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
+  border: none;
+  color: #ffffff;
+}
+.ivu-menu-horizontal.ivu-menu-light:after{
+  background: none;
+}
+.ivu-select-dropdown{
+  text-align:center;
+}
+.ivu-tabs-bar {
+  border-bottom: none;
+  margin-bottom: 16px;
+  position: absolute;
+  bottom: 0;
+}
+.ivu-tabs-nav .ivu-tabs-tab{
+  background: rgba(151,166,197,.4);
+  color: #fff;
+  padding: 3% 6%;
+}
+
+.ivu-tabs-nav .ivu-tabs-tab-active {
+  background-color: #97a6c5;
+  padding: 3% 9%;
+}
+.ivu-tabs-ink-bar{
+  height: 0;
+}
+.ivu-tabs-nav .ivu-tabs-tab:hover, .ivu-tabs{
+  color: #fff;
+}
+input:-webkit-autofill{
+  background:none !important;
+}

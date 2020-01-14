@@ -1,0 +1,38 @@
+@import '../_variables';
+@import '../_mixins';
+
+.topic-fliter-layout {
+  min-height: 100vh;
+  background-color: #5292E9;
+  // background: url(/client/images/topic_bg.jpg) no-repeat center;
+  background-size: contain;
+  padding-top: 50px;
+
+  div.ivu-collapse {
+    background-color: transparent;
+    border: transparent;
+    font-size: 14px;
+    div.ivu-collapse-item {
+      border: transparent;
+      div.ivu-collapse-header {
+        color: #fff;
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.topic-fliter-wrap {
+  width: 500px;
+  margin: 0 auto;
+  @include isDevice('mobile'){
+    width: 100%;
+  }
+}
+
+.topic-fliter-box .ivu-collapse {
+  margin: 0 auto;
+  // border: 2px solid #fff;
+  // height: 600px;
+  // overflow-y: scroll;
+}

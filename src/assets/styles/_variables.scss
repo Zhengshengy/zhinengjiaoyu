@@ -1,0 +1,128 @@
+// 常用样式变量
+
+$bn-app-width:1024px;
+$bn-header-height:60px;
+$bn-mobile-header-height:48px;
+$bn-mobile-screen:767px;
+$bn-mini-mobile-screen:480px;
+$bn-pad-screen:860px;
+$bn-neg-mobile-header-height:-48px;
+
+$bn-theme-color:#588BD6;
+
+$bn-background-white:#FFFFFF;
+$bn-background-gray:#d0d3d8;
+$bn-background-color:#fafafa;
+$bn-app-background-color:#fafafa;
+$bn-app-header-background-color:#393939;
+$bn-single-header-background-color:#338bd8;
+$bn-app-green:#00BF62;
+$bn-app-yellow:#F8E71C;
+$bn-app-fill-gray:#F1F1F1;
+$bn-app-border:#D7D7D7;
+
+$bn-app-pink:#EE3888; //highlight color
+$bn-edit-red:#E3102A;//error color
+$bn-edit-blue:#4A90E2;  //action color
+$bn-edit-blue-fill: #4083FF;
+$bn-profile-border:#E2E2E2;
+$bn-input-border: #c6c6c6;
+$bn-divider-gray: #CFCFCF;
+$bn-component-gray: #979797;
+$bn-disabled-color:#f6f6f6;
+
+//fill button colors
+$btn-green:#1ABE68;
+$btn-green-hover:#169954;
+$btn-gray:#959595;
+$btn-gray-hover:#707070;
+$btn-red:#FF0000;
+$btn-red-hover:#DB0000;
+$btn-pink:#EE3888;
+$btn-pink-hover:#EA227A;
+$btn-blue: #4083FF;
+$btn-blue-hover: #2A73FB;
+$btn-dark: #393939;
+$btn-dark-hover: #242424;
+
+//font size
+$bn-font-xlarge:24px;
+$bn-font-large:20px;
+$bn-font-medium:16px;
+$bn-font-regular:14px;
+$bn-font-small:12px;
+//basic colors
+$bn-base-color:black;
+$bn-normal-color:rgba(0,0,0,0.87);
+$bn-sub-color: rgba(0,0,0,0.8);
+$bn-light-color: rgba(0,0,0,0.7);
+$bn-ultralight-color: rgba(0,0,0,0.4);
+$bn-grey-color: #d0d3d8;
+$bn-white-color: #fff;
+
+$bn-hightlight-color:#EE3888;
+$bn-action-color: #4a90e2;
+$bn-error-color: #e3102a;
+$bn-chat-background-color: #FFFFFF;
+$bn-chat-date-divider-background: #777;
+
+$bn-weight-bold: 700;
+$bn-weight-semi-bold: 700;
+$bn-weight-medium: 600;
+$bn-weight-regular: 400;
+$bn-weight-light: 300;
+$bn-weight-extra-light: 100;
+$bn-weight-normal:normal;
+
+$bn-text-light-grey: #7B7B7B;
+$bn-text-grey: rgba(57,57,57, 0.8);
+$bn-plan-info-grey: #616161;
+
+$bn-past-message-border: rgba(0, 0, 0, 0.28);
+$bn-past-message-border-darken: rgba(0, 0, 0, 0.42);
+$bn-past-message-main-text: rgba(0, 0, 0, 0.7);
+$bn-past-message-main-text-darken: rgba(0, 0, 0, 1);
+
+$bn-past-message: lighten(black, 88%);
+$bn-past-message-text: lighten(black, 46%);
+
+
+$bn-font-color-nine:#999;
+
+$box-shadow:0 3px 7px #a4a4a4;
+
+// size-color
+$bn-size-color-white:#fff;
+$bn-size-color:#338bd8;
+
+
+
+//width
+$bn-w100:100%;
+$bn-w80:80%;
+
+
+//z index list
+// refer https://short.is/handling-zindex-with-sass
+
+$bn-zindex: (
+  'bodyWrapper',
+  'bodyDropdown',
+  'requestNotification',
+  'promotionBar',
+  'whatsnew',
+  'footer',
+  'menuBar',
+  'menuDropdown',
+  'notification',
+  'modal',
+  'mobileMenu',
+  'uploader',
+);
+
+@function bnz($value) {
+  @if index($bn-zindex, $value) {
+    @return index($bn-zindex, $value) * 10;
+  }
+  @warn '#{$value} is not included in the $bn-zindex list.';
+}

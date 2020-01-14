@@ -1,0 +1,153 @@
+@import '../_variables';
+@import '../_mixins';
+
+.top__i18n {
+  @include equal-width-height(100%,50px,hidden);
+  position: fixed;
+  top: 0px;
+  z-index: 200;
+  text-align: center;
+  display: inline-block;
+    .top__i18n__li,.top__i18n__a {
+      padding: 15px 10px;
+      display: inline-block;
+      color:$bn-size-color-white;
+      cursor: pointer;
+    }
+}
+
+.top__background--blue {
+  background: $bn-single-header-background-color;
+  color: $bn-size-color-white;
+  padding: 0px 20px;
+  height: 50px;
+  line-height: 20px;
+}
+.top__menu--mobile {
+  text-align: left;
+  height: 36px;
+  padding-top: 8px;
+}
+
+
+.header-avator-con {
+  position: absolute;
+  right: 4%;
+  top: 0;
+  height: 100%;
+}
+.single-page-wrap {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  //background-color: #F0F0F0;
+  background-color: #FFF;
+  //z-index: 1;
+  transition: left .3s;
+}
+
+.single-page-wrap--mb {
+  top: 38px;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  //min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.mb-leftside_container {
+  //min-height: 100vh;
+  width: 256px;
+  color: white;
+  background-color: #338bd8;
+}
+
+.mb-outside_container {
+  flex: 1;
+  position: fixed;
+  top: 0;
+  left: 256px;
+  width: 100vw;
+  //height: 100vh;
+  background: black;
+  opacity: 0.02;
+}
+
+.toggle-button {
+  //margin-left: -10px;
+  width: 20px;
+  background-color: #338bd8;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  background-color: #338bd8;
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  //min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.bn-main-menu-open {
+  z-index: 99999;
+}
+//新增
+.center-layout.nt-information{
+  @include isDevice('mobile'){
+    overflow-x: hidden;
+    .ivu-form-item-content{
+      text-align: left;
+    }
+    .ivu-row{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.bn-display-fixed{
+  @include isDevice('mobile'){
+    display:flex;
+    flex-direction: column;
+    .ivu-select{
+      margin-top: 15px;
+    }
+    .ivu-select:nth-child(1){
+      margin-left: 15px;
+    }
+    form.nt-infor-cont.ivu-form.ivu-form-label-right{
+      margin-left: -120px;
+    }
+  }
+
+}
+form.nt-infor-cont.ivu-form.ivu-form-label-right{
+  @include isDevice('mobile'){
+    margin-left: -120px;
+  }
+}

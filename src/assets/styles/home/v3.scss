@@ -1,0 +1,293 @@
+//Created by Bamboo on 2018/8/17.
+
+@import '../_variables';
+@import '../_mixins';
+
+$bn-v3-margin-mobile: 4px;
+$bn-v3-margin: 20px;
+$bn-v3-color: #FFFFFF;
+
+.v3_main{
+  height: 100%;
+  overflow: visible;
+  color: $bn-v3-color;
+}
+
+.section {
+  padding: 0 2%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+.section1 {
+  background-image: url(/client/images/index_01.png);
+}
+.section2 {
+  padding: 0;
+  background-image: url(/client/images/index_02.png);
+}
+.section3 {
+  padding: 0;
+  height: 100%;
+  background-color: rgb(21, 21, 32);
+  div[video]{
+    margin: 0 1%;
+    //border: solid red 1px;
+    height: calc(100% - 160px);
+    div[left]{
+      //border: solid red 1px;
+      @include isDevice('mobile') {
+        height: 50%;
+      }
+      @include isDevice('!mobile') {
+        float: left;
+        height: 100%;
+        width: 50%;
+      }
+      div[how-to-use]{
+        height: 100%;
+        //border: solid red 1px;
+        div{
+          @include isDevice('mobile') {
+            font-size: 28px;
+          }
+          @include isDevice('!mobile') {
+            font-size: 36px;
+          }
+        }
+        button{
+          background: $bn-v3-color;
+          color: black;
+          width: 160px;
+          @include font-medium;
+        }
+      }
+      div[play-video]{
+        text-align: center;
+        //border: solid red 1px;
+      }
+    }
+    div[right]{
+      @include isDevice('mobile') {
+        height: 50%;
+      }
+      @include isDevice('!mobile') {
+        float: left;
+        height: 100%;
+        width: 50%;
+      }
+
+      //border: solid red 1px;
+      background-image: url(/client/images/index_03.png);
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: center;
+      cursor:pointer;
+    }
+  }
+  div[footer]{
+    background-color: rgb(14, 14, 27);
+    @include font-medium;
+    //border: solid red 1px;
+    height: 160px;
+    padding-left: 4%;
+    div[links]{
+      //border: solid red 1px;
+      line-height: 100px;
+      span{
+        margin-right: 2%;
+        cursor:pointer;
+      }
+    }
+    div[copyright]{
+      color: gray;
+    }
+  }
+}
+
+[product-introduce] > .ivu-select-dropdown {
+  color: blue;
+  border-radius: 0 !important;
+  background-color: rgb(25, 25, 34);
+}
+
+[product-introduce] a {
+  @include font-medium;
+}
+
+[product-introduce] .ivu-dropdown-menu {
+  //font-size: 14px!important;
+  text-align: left;
+  li[submenu]{
+    width: 100px;
+  }
+}
+
+[product-introduce] .ivu-dropdown-item {
+  color: $bn-v3-color;
+  font-weight: normal;
+}
+
+[product-introduce] .ivu-dropdown-item:hover {
+  color: #495060;
+}
+
+@mixin v3_menuItem_margin{
+  @include isDevice('mobile') {
+    margin-left: 4px;
+  }
+  @include isDevice('!mobile') {
+    margin-left: 20px;
+  }
+}
+
+.v3_menu{
+  //padding: 20px 0;
+  font-weight: bold;
+  @include font-medium;
+  @include isDevice('!mobile') {
+    line-height: 60px;
+  };
+  @include isDevice('mobile') {
+    line-height: 40px;
+  };
+}
+
+.v3_menuItem{
+  @include v3_menuItem_margin;
+  cursor:pointer;
+  .label {
+    color: $bn-v3-color;
+  }
+  ul {
+    li {
+      clear: none;
+    }
+  }
+  div[function] {
+    a{
+      color: $bn-v3-color;
+      @include font-medium;
+    }
+    .ivu-select-dropdown {
+      color: blue;
+      border-radius: 0 !important;
+      background-color: rgb(25, 25, 34);
+    }
+    .ivu-dropdown-item {
+      font-size: 14px!important;
+      color: $bn-v3-color;
+      text-align: left;
+      font-weight: normal;
+    }
+    .ivu-dropdown-item:hover {
+      color: #495060;
+    }
+  }
+}
+
+.v3_menuItemLogo{
+  @include isDevice('!mobile') {
+    margin-right: 80px;
+  };
+  @include isDevice('mobile') {
+    margin-right: 20px;
+  };
+}
+
+.v3_menu div .v3_menuItem:first-child {
+  margin-left: 0px;
+}
+
+.v3_system_tip{
+  @include font-medium;
+  position: relative;
+  text-align: center;
+  top: 80%;
+}
+
+.v3_dot
+{
+  @include font-large;
+}
+
+.v3_functions{
+  padding: 0 3%;
+  @include isDevice('mobile')
+  {
+    height: 25%;
+  }
+  @include isDevice('!mobile')
+  {
+    height: 45%;
+  }
+  div[title] {
+    @include font-xlarge;
+    @include isDevice('!mobile')
+    {
+      height: 65%;
+    }
+    @include isDevice('mobile')
+    {
+      height: 40%;
+    }
+    //border: solid blue 1px;
+  }
+  div[buttons]{
+    @include isDevice('!mobile')
+    {
+      height: 35%;
+      padding: 0 5%;
+    }
+    @include isDevice('!mobile')
+    {
+      height: 30%;
+    }
+    //border: solid yellow 1px;
+    div[button] {
+      text-align: center;
+      @include isDevice('!mobile')
+      {
+        //padding: 0 5%;
+        width: 25%;
+      }
+      @include isDevice('mobile')
+      {
+        width: 50%;
+        //padding: 0 1%;
+      }
+      button{
+        width: 80%;
+        color: $bn-v3-color;
+        @include font-medium;
+      }
+    }
+  }
+}
+
+.v3_abstract
+{
+  @include isDevice('mobile')
+  {
+    font-size: $bn-font-small;
+  }
+  @include isDevice('!mobile')
+  {
+    font-size:$bn-font-medium;
+  }
+  padding: 0 3%;
+  //position: relative;
+  //top: 45%;
+  //height: 60%;
+  background-color: rgba(22,21,32, 0.8);
+
+  div{
+    //height: 100%;
+    //border: solid red 1px;
+    p {
+      position: relative;
+      padding-top: 2%;
+      color: $bn-v3-color!important;
+    }
+  }
+}

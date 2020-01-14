@@ -1,0 +1,29 @@
+@import '../_variables';
+@import '../_mixins';
+#parent{
+  height: 90vh;
+  @include  isDevice('mobile'){
+    height: auto;
+    overflow: scroll;
+  }
+  .topImg-left-img{
+    width: 23%;
+    height: 100vh;
+    margin-left: 7%;
+    @include  isDevice('mobile'){
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+  .topImg-right-video{
+    height: 100vh;
+    @include  isDevice('mobile'){
+      width: 100%;
+      height: auto;
+    }
+  }
+  img{
+    width: 100%;
+  }
+}

@@ -1,0 +1,101 @@
+@import '../_variables';
+@import '../_mixins';
+//支付成功
+.paysuccess{
+  text-align: center;
+  @include displayFlex(flex,space-around,center);
+  flex-direction: column;
+  .payIcon{
+    margin-top: 50%;
+    font-size: 28px;
+    color: #12c41b;
+    Icon{
+      font-size: $bn-font-xlarge;
+    }
+  }
+  .payInformation{
+    @include displayFlex(flex,space-around,center);
+    font-size: $bn-font-medium ;
+    margin-top: 9%;
+    margin-bottom: 1%;
+    p{
+      color: #f00;
+    }
+  }
+  .payOrder{
+    cursor: pointer;
+  }
+}
+
+
+//支付失败
+
+.payfails{
+  @include displayFlex(flex,center,center);
+  flex-direction: column;
+  margin-top: 5%;
+    ul{
+      @include displayFlex(flex,center,center);
+      .payfails-img{
+        margin-bottom: 3%;
+      }
+      h1{
+        margin-bottom: 6%;
+      }
+    }
+  Button{
+    display: block;
+    margin-left: 5%;
+  }
+}
+
+
+//订单支付-order
+.orderCon{
+  width: 50%;
+  border: solid 1px #efefef;
+  padding: 2%;
+  @include isDevice("!mobile") {
+    width: 50%;
+  }
+  .orderCon-title, .ivu-alert-info{
+    border: none;
+    font-weight: bold;
+    font-size: $bn-font-regular;
+    border-bottom: solid 3px #F1F1F1;
+    color: $bn-size-color;
+    background-color:$bn-background-white;
+    margin: 2% 0;
+  }
+  .orderCon-list{
+    margin-left: 4%;
+    border-bottom: solid 1px #efefef;
+    padding-bottom: 10px;
+    margin-bottom: 2%;
+  }
+  .orderCon-payment{
+    margin-left: 4%;
+  }
+  .orderCon-amount{
+    @include displayFlex(flex,space-between,center);
+    padding: 6px 15px;
+    h1{
+      font-size: $bn-font-regular;
+      font-weight: $bn-weight-bold;
+    }
+    .orderCon-amount-money{
+      color:#f00;
+      font-weight: $bn-weight-bold;
+      font-size: $bn-font-regular;
+    }
+  }
+  .orderCon-pay-button{
+    display: block;
+    @include width_align(30%,auto);
+    text-align: center;
+    background-color: $bn-single-header-background-color;
+    color: $bn-white-color;
+    border-radius: 40px;
+    margin-top:5%;
+  }
+}

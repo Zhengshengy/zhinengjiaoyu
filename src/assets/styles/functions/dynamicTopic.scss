@@ -1,0 +1,75 @@
+@import '../_variables';
+@import '../_mixins';
+.dynamicTopic-video{
+  background-color: $bn-background-white;
+  @include equal-width-height(100%,100%,hidden);
+  @include isDevice('mobile')
+  {
+    @include equal-width-height(100%,100%,scroll);
+  }
+  .v3-students-bannerImg{
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+.v3-students-topImg{
+  @include width_align(96%,auto);
+  @include equal-width-height(96%,68vh,hidden);
+  @include displayFlex(flex,flex-start,flex-start);
+  margin-top: 1%;
+  @include isDevice('mobile')
+  {
+    @include equal-width-height(96%,auto,scroll);
+    @include displayFlex(flex,flex-start,flex-start);
+    flex-direction: column;
+  }
+  @include isDevice('!mobile')
+  {
+    margin-top: 1%;
+  }
+}
+.topImg-left-img{
+  width: 35%;
+  background: #fff;
+  height:67vh;
+  margin: 5px 0 1% 8%;
+  @include isDevice('mobile')
+  {
+    width: 100%;
+    height:auto;
+    margin-top: 3%;
+    margin-left: 0;
+  }
+  img{
+    width: 90%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    @include box-shadows(0 0px 4px #474747);
+    @include isDevice('mobile')
+    {
+      margin-left: 5%;
+    }
+  }
+}
+.topImg-right-video{
+  @include equal-width-height(46%,66.6vh,hidden);
+  @include box-shadows(0 0px 4px #474747);
+  background: #fff;
+  margin: 5px 0 1% 0;
+  @include isDevice('mobile')
+  {
+    @include equal-width-height(90%,auto,hidden);
+    margin-left:5%;
+  }
+  video{
+    width: 100%;
+  }
+}
+
+.v3-dynamicTopic{
+  background-color: $bn-background-white;
+  #dynamicTopic-bgWhite{
+    background-color: $bn-background-white;
+  }
+}

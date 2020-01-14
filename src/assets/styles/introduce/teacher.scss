@@ -1,0 +1,68 @@
+@import '../_variables';
+@import '../_mixins';
+
+
+.v3-teacher-list{
+  ul{
+    @include displayFlex(flex,center,center);
+    flex-wrap: wrap;
+    margin-left: 13%;
+  }
+  li{
+    width: 100%;
+    margin: 2%;
+    position: relative;
+    display: flex;
+    color: $bn-size-color-white;
+    @include  isDevice('mobile'){
+      width: 100%;
+      margin: 2% 0;
+    }
+    .list-block{
+      width: 56%;
+      background: #4b89dc;
+      padding: 2%;
+      @include isDevice('mobile'){
+        width: 56%;
+      }
+      h2{
+        width: 50%;
+        font-size: $bn-font-large;
+        @include isDevice('mobile'){
+          font-size: $bn-font-small;
+        }
+      }
+      p{
+        margin: 3% 0;
+        color: $bn-size-color-white;
+        font-size: $bn-font-regular;
+        text-align: left;
+        width:43%;
+        @include isDevice('mobile'){
+          font-size: $bn-font-small;
+          width:63%;
+        }
+      }
+    }
+    .list-img{
+      display:block;
+      margin:2% 0;
+      margin-left: -54%;
+      width: 84%;
+      background: $bn-white-color;
+      @include box-shadows(0 0px 9px #474747);
+      @include isDevice('mobile'){
+        margin:6% 0;
+        margin-left: -50%;
+      }
+      img{
+        float: left;
+        width: 50%;
+        @include isDevice('mobile'){
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

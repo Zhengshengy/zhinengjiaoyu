@@ -1,0 +1,60 @@
+@import '../_variables';
+@import '../_mixins';
+
+.main__i18n {
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  z-index: 200;
+  width: 60%;
+  @include isDevice('mobile') {
+    height: 30px;
+    width: 100%;
+    background-color: black;
+  }
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+}
+.main__i18n li,.main__i18n a {
+  padding: 5px 10px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.main__footer {
+  display: flex;
+  flex-direction: row;
+  height: 4vh;
+  @include isDevice('!mobile') {
+    position: fixed;
+    bottom: 0px;
+    z-index: 200;
+  }
+  width: 100%;
+  background: #404b6e;
+  color: #b5bcd6;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  @include isDevice('mini_mobile') {
+    font-size: 10px;
+    height: 50px;
+  }
+}
+.footer__copyright {
+  @include isDevice('!mobile') {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.footer__license {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}

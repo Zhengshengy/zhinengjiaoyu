@@ -1,0 +1,42 @@
+@import '../_variables';
+@import '../_mixins';
+
+.reality-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reality-item{
+  width: calc((100% - 30px)/2);
+  @include isDevice("mobile") {
+    width: 100%;
+    margin-right: 0px;
+  }
+  padding: 16px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:nth-child(2n){
+    @include isDevice("!mobile") {
+      margin-left: 30px;
+    }
+  }
+
+  h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  p{
+    color: #666;
+    font-size: 13px;
+  }
+}
+.progress-wrap {
+   margin-left: 10px;
+   .progress{
+     color: #3975d1;
+   }
+}
